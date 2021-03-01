@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% load static %}
+{% block body %}
+<div class="container-fluid px-0">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'images/slide1.jpg' %}" class="d-block w-100" alt="Image Not Found">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Water and Falls</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://source.unsplash.com/1600x350/?sunrise,mountains" class="d-block w-100" alt="Image Not Found">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Sunrise and Mountains</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://source.unsplash.com/1600x350/?nature,trees" class="d-block w-100" alt="Image Not Found">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>nature and trees</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="container my-3">
+  <h1 class="my-4 text-center">Select From Our Range</h1>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for dest in dests %}
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="../{{generalUrl}}/{{dest.img}}" class="d-block w-100" alt="Image Not Found">
+        {%if dest.offer%}
+        <div class="text-left mx-3 "><a href="#">Special Offer</a></div>
+        {% endif %}
+        <div class="card-body">
+          <strong>{{dest.name}}</strong><br>
+          <p class="card-text">{{dest.desc}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Buy Now</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Add to cart</button>
+            </div>
+            <small class="text-muted">{{dest.price}}.Rs</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    
+  </div>
+</div>
+{% endblock body %}

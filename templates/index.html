@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>chatbot</title>
+</head>
+<style type="text/css">
+*{
+margin: 0px; padding: 0px;
+text-transform: capitalize;
+}
+.main{
+width: 100%;
+height: 100vh;
+margin-top: 20px;
+}
+.chat{
+margin: auto;
+justify-content: center;
+/*text-align: center;*/
+width: 30%;
+height: 80vh;
+border: 1px solid;
+}
+.title{
+padding: 3px;
+border-bottom: 1px solid grey;
+
+}
+.content{
+padding: 10px;
+width: 90%;
+height: 75%;
+/*border: 1px solid red;*/
+/*margin: auto;*/
+}
+#aisha{
+border: 1px solid red;
+float: left;
+color: green;
+width: 50%;
+/*right: 0;*/
+}
+#user{
+border: 1px solid grey;
+float: right;
+width: 50%;
+}
+.msg{
+border-top: 1px solid grey;
+
+}
+.msg input{
+width: 80%;
+}
+.msg input, button{
+margin: 2px;
+padding: 2px;
+height: 30px;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">DataBases</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/login">Bot</a></li>
+            <li><a class="dropdown-item" href="/login">Another Bot</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/login">Some Bot</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="main">
+<div class="chat">
+<div class="title">
+<h1>hi, i'm AISHA</h1>
+<p>artificial intelligent human stimulated assistent</p>
+</div>
+<div class="content">
+<p id="aisha">{{aishavoice}}</p>
+<p id="user">hellow</p>
+
+</div>
+<div class="msg">
+<input type="" name="">
+<button>send</button>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+		crossorigin="anonymous"></script>
+
+</head>
+<style type="text/css">
+	* {
+		margin: 0px;
+		padding: 0px;
+	}
+
+	body {
+		text-transform: capitalize;
+		font-size: 10pt;
+		background-image: url(../media/local/images/tableDecor.jpg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.container {
+		width: 26%;
+		height: 80vh;
+		border-radius: 15px;
+		margin-top: 4rem;
+		padding: 15px;
+		font-weight: bold;
+		background-color: rgba(232, 231, 231, 0.2);
+		box-shadow: 0 10px 50px #000;
+		position: relative;
+		float: right;
+		right: 15rem;
+	}
+
+	.btn {
+		background-color: #0d6efd;
+		-moz-background-color: #0d6efd;
+	}
+</style>
+
+<body>
+	{% if messages %}
+	{% for message in messages %}
+	<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+		{{ message }}
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+	{% endfor %}
+	{% endif %}
+	<div class="container ">
+		<div>
+			<h1>create account</h1>
+		</div>
+		<form class="row g-3" method="post" action="{% url 'register' %}">
+			{% csrf_token %}
+			<div>
+				<div class="col-md-12">
+					<label for="firstName" class="form-label">First Name</label>
+					<input type="text" class="form-control" id="firstName" name="firstName">
+				</div>
+				<div class="col-md-12">
+					<label for="lastName" class="form-label">Last Name</label>
+					<input type="text" class="form-control" id="lastName" name="lastName">
+				</div>
+				<div class="col-md-12">
+					<label for="inputContact" class="form-label">Phone</label>
+					<input type="number" class="form-control" id="inputContact" name="inputContact">
+				</div>
+				<div class="col-md-12">
+					<label for="inputEmail4" class="form-label">Email</label>
+					<input type="email" class="form-control" id="inputEmail4" name="inputEmail4">
+				</div>
+				<div class="col-md-12">
+					<label for="inputPassword4" class="form-label">Password</label>
+					<input type="password" class="form-control" id="inputPassword4" name="inputPassword4">
+				</div>
+				<div class="col-md-12">
+					<label for="inputRePassword4" class="form-label">Re-enter Password</label>
+					<input type="password" class="form-control" id="inputRePassword4" name="inputRePassword4">
+				</div>
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary w-60 mt-3">Create your account</button>
+				</div>
+				<div class="col-md-12">
+					<label for="inputPassword4" class="form-label mt-3">alerady have an account..?<a
+							href="{% url 'login' %}">click here</a></label>
+
+				</div>
+			</div>
+	</div>
+	</form>
+	</div>
+</body>
+
+</html>
