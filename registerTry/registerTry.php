@@ -1,3 +1,3 @@
 <?php
-include_once='registerTry.html';
+include_once('registerTry.html');
 ?>
